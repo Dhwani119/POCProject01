@@ -2,11 +2,11 @@ package drivers;
 
 import org.example.config.ConfigReader;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
 public class DriverFactory {
 
     private static WebDriver driver;
-private static ChromeDriver chromeDriver;
+    private static ChromeDriverManager chromeDriver;
     public static WebDriver  getDriver()
     {
 
@@ -15,21 +15,21 @@ private static ChromeDriver chromeDriver;
         {
 
 
-            String browserName = ConfigReader.getPropertyValue("chrome");
+            String browserName = ConfigReader.getPropertyValue("browser");
 
             switch (browserName.toLowerCase())
             {
                 case "chrome":
+                    driver = new ChromeDriverManager().initializeChromeDriver();
                     break;
                 case "firefox":
-                    System.setProperty("webdriver.gecko.driver", "path/to/geckodriver");
-                    driver = new FirefoxDriver();
+                   driver = new FirefoxDriverManager().initializeFirefoxDriver();
                     break;
                 // Add support for other browsers if needed
                 default:
                     throw new IllegalArgumentException("Invalid browser specified in config.properties: " + browserName);
             }
-            driver.get(ConfigReader.getBaseUrl());
+            driver.get(ConfigReader.getPropertyValue("url"));
             // Optional: Set additional browser settings, maximize window, etc.
             driver.manage().window().maximize();
         }
