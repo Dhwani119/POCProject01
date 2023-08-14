@@ -25,11 +25,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version> <!-- Use the desired version -->
         <configuration>
-          <!-- Java source version compatible with JDK 19 -->
-          <source>13</source> <!-- Or any version equal to or later than 7 -->
-          <!-- Java target version compatible with JDK 19 -->
-          <target>13</target> <!-- Or any version equal to or later than 7 -->
+          <source>1.8</source> <!-- Java source version -->
+          <target>1.8</target> <!-- Java target version -->
         </configuration>
       </plugin>
       <plugin>
@@ -47,17 +46,6 @@
 
   <dependencies>
 
-    <!-- Selenium Dependencies -->
-
-
-
-    <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-java</artifactId>
-      <version>4.10.0</version> <!-- Replace this with the desired version -->
-    </dependency>
-
-
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-chrome-driver</artifactId>
@@ -65,7 +53,19 @@
       <!-- Adjust the version number based on your requirements -->
     </dependency>
 
-     <!-- Cucumber Dependencies -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.8.1</version> <!-- Or the latest version available -->
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>4.10.0</version> <!-- Replace this with the desired version -->
+    </dependency>
+
+    <!-- Cucumber Dependencies -->
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
@@ -77,10 +77,18 @@
       <version>7.13.0</version> <!-- Check for the latest version -->
       <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.10.0</version>
+      <scope>test</scope>
+    </dependency>
 
 
 
   </dependencies>
+
 
 
 

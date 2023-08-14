@@ -9,7 +9,7 @@ public class ChromeDriverManager {
     private WebDriver driver;
 
     public WebDriver initializeChromeDriver() {
-        System.setProperty("webdriver.chrome.driver", "C:/User/dhwan/Documents/Dhwani/Chromedriver/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:/Users/dhwan/Documents/Dhwani/Chromedriver/chromedriver.exe");
 
         ChromeOptions options = new ChromeOptions();
         // Add any desired Chrome options here
